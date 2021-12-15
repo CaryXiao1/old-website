@@ -1,0 +1,44 @@
+---
+layout: default
+---
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<div class="card-wrap">
+  <div class="card">
+  <!--<h1 class="page-heading">work in progress!</h1>-->
+    <div id="portfolio-center">
+      <img id="main-bust" src="../img/main-bust.jpg">
+      <h3 id="main-text">Hey There! <br>
+        I'm Cary, a Computer Science major at
+        Stanford University. I like to code and 
+        work on projects that are interesting.</h3>
+    </div>
+    <svg class="svg-icon down-arrow" onclick="cardDown()" preserveAspectRatio="xMidYMid meet" viewbox="0 0 25 25"><use xlink:href="{{ '/assets/icons.svg#down-arrow' | relative_url }}"></use></svg></a>
+            
+  </div>
+  <div class="card">
+    <div class="card-page"> 
+      <svg class="svg-icon up-arrow" onclick="cardUp()" preserveAspectRatio="xMidYMid meet" viewbox="0 0 25 25"><use xlink:href="{{ '/assets/icons.svg#up-arrow' | relative_url }}"></use></svg>
+    
+        <h1 class="post-title">some stats</h1>
+        <h1>education</h1>
+        <h3>Stanford University: c/o '25</h3>
+        <h3>Alabama School of Math & Science: c/o '21</h3>
+        <h1>skills</h1>
+        <h3>Programming: C++, Python, Java</h3>
+        <h3>Software: Qt Creator, VS Code, Eclipse</h3>
+        <h1>notable honors</h1>
+        <h3>3-time ISEF Finalist, Presidential Scholar Semifinalist, etc.</h3>
+      </div>
+      <svg class="svg-icon down-arrow" onclick="cardDown()" preserveAspectRatio="xMidYMid meet" viewbox="0 0 25 25"><use xlink:href="{{ '/assets/icons.svg#down-arrow' | relative_url }}"></use></svg></a>
+    </div>
+
+  <div class="card">
+    <svg class="svg-icon up-arrow" id="up-arrow-3" onclick="cardUp()" viewbox="0 0 25 25"><use xlink:href="{{ '/assets/icons.svg#up-arrow' | relative_url }}"></use></svg></a>
+    <div class="card-page">
+      <h1 class="post-title">helpful links</h1>
+      <a class="link" href="https://drive.google.com/file/d/1bdcowJ6aFlHPypu-JxlPAM9jSO42xivI/view?usp=sharing">resume</a>
+    </div>
+  </div>
+</div>
+

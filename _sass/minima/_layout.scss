@@ -1,0 +1,400 @@
+
+/**
+ * Site header
+ */
+.site-header {
+  // border-top: 5px solid $grey-color-dark;
+  // border-bottom: 1px solid $grey-color-light;
+  min-height: $spacing-unit * 1.865;
+  // Positioning context for the  navigation icon
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  // background-color: #333;
+}
+
+.site-title {
+  @include relative-font-size(1.625);
+  font-weight: 300;
+  line-height: $base-line-height * $base-font-size * 2.25;
+  letter-spacing: -1px;
+  margin-bottom: 0;
+  float: left;
+  color: $text-color;
+  text-decoration: underline;
+  text-decoration-color: $brand-color;
+  text-decoration-thickness: 3px;
+
+
+  &,
+  &:hover {
+    color: $brand-color;
+    text-decoration-thickness: 3px;
+  }
+  &:visited {
+    color: $text-color;
+  }
+}
+
+.site-nav {
+  float: right;
+  line-height: $base-line-height * $base-font-size * 2.25;
+
+  .nav-trigger {
+      display: none;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .page-link {
+    color: $text-color;
+    line-height: $base-line-height;
+
+    &:hover {
+      text-decoration: underline;
+      text-decoration-color: $brand-color;
+      text-decoration-thickness: 3px;
+    }
+
+    // Gaps between nav items, but not on the last one
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  @include media-query($on-palm) {
+    position: absolute;
+    top: 9px;
+    right: $spacing-unit / 2;
+    background-color: $background-color;
+    border: 1px solid $grey-color-light;
+    border-radius: 5px;
+    text-align: right;
+
+    label[for="nav-trigger"] {
+      display: block;
+      float: right;
+      width: 36px;
+      height: 36px;
+      z-index: 2;
+      cursor: pointer;
+    }
+
+    .menu-icon {
+      display: block;
+      float: right;
+      width: 36px;
+      height: 26px;
+      line-height: 0;
+      padding-top: 10px;
+      text-align: center;
+      background-color: $background-color;
+
+      > svg {
+        fill: $grey-color-dark;
+      }
+    }
+
+    input ~ .trigger {
+      clear: both;
+      display: none;
+    }
+
+    input:checked ~ .trigger {
+      display: block;
+      padding-bottom: 5px;
+    }
+
+    .page-link {
+      display: block;
+      padding: 5px 10px;
+      @include text-stroke(1, $brand-color);
+      color: $text-color;
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color: $brand-color;
+        text-underline-offset: 2px;
+        text-decoration-thickness: 1px;
+      }
+      &:not(:last-child) {
+        margin-right: 0;
+      }
+      margin-left: 20px;
+    }
+  }
+}
+
+/* Site page classes
+ *
+*/
+#portfolio-center { // used for main card w/ picture on right and text on left
+  position: absolute;
+  top: 25%; // TODO: set top and left in js
+  left: 25%;
+  padding-left: 13px;
+  padding-right: 13px;
+  width: auto;
+  height: 30%;
+  max-width: 600px;
+  max-height: 225px;
+  min-height: 125px;
+  // border: 1px solid blue;
+  #main-bust {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    float: left;
+  }
+  #main-text {
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+    width: 55%;
+    float: right;
+    padding-left: 15px;
+  }
+  
+}
+
+.card-wrap {
+  font-size: 0;
+  position:absolute;
+  top: 0;
+  left: 0;
+  height:100%;
+  width:100%;
+  display:flex;
+  flex-flow:row wrap;
+  justify-content:space-around;
+  // border: 1px solid black;
+
+  .card {
+    font-size: $base-font-size;
+    overflow: hidden;
+    position: relative;
+    // border:1px solid red;
+    height:100%;
+    width:100%; 
+
+    .card-page {
+      margin: $spacing-unit;
+      margin-top: $spacing-unit * 3;
+      padding: $spacing-unit;
+    }
+  }
+}
+
+.link {
+  color: $text-color;
+  @include relative-font-size(1.625);
+
+  &:hover {
+    text-decoration: underline;
+    text-decoration-color: $brand-color;
+    text-decoration-thickness: 3px;
+  }
+
+}
+
+/* Scroll Arrows
+ *
+ *
+*/
+.up-arrow {
+  position: absolute;
+  left: 50%;
+  top: 25px;
+  z-index: 15;
+  transform: translate(-50%, 0);
+}
+.down-arrow {
+  position: absolute;
+  left: 50%;
+  bottom: 25px;
+  z-index: 15;
+  transform: translate(-50%, 0);
+}
+
+#email {
+  transform: translate(4px, 3px);
+}
+
+/**
+ * Site footer
+ */
+.site-footer {
+  // border: 1px solid $grey-color-light;
+  padding: $spacing-unit / 3 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 9;
+}
+
+.footer-heading {
+  @include relative-font-size(1.125);
+  margin-bottom: $spacing-unit / 2;
+}
+
+.contact-list,
+.social-media-list {
+  list-style: none;
+  margin-left: 0;
+}
+
+.footer-copyright {
+  position:absolute;
+  bottom:0;
+  right:0;
+  float: right;
+  color: black;
+}
+
+.footer-col-wrapper {
+  // border: 1px solid red;
+  @include relative-font-size(1);
+
+  position: relative;
+  color: $grey-color;
+  margin-left: 0;
+  @extend %clearfix;
+}
+
+.footer-col {
+  // border: 1px solid green;
+  float: left;
+  margin-bottom: 0 ;// $spacing-unit / 2;
+  padding-left: $spacing-unit / 2;
+}
+
+.footer-col-1 {
+  border: 1px solid green;
+  width: -webkit-calc(35% - (#{$spacing-unit} / 2));
+  width:         calc(35% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-2 {
+  width: -webkit-calc(20% - (#{$spacing-unit} / 2));
+  width:         calc(20% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-3 {
+  width: -webkit-calc(45% - (#{$spacing-unit} / 2));
+  width:         calc(45% - (#{$spacing-unit} / 2));
+}
+
+@include media-query($on-laptop) {
+  .footer-col-1,
+  .footer-col-2 {
+    width: -webkit-calc(50% - (#{$spacing-unit} / 2));
+    width:         calc(50% - (#{$spacing-unit} / 2));
+  }
+
+  .footer-col-3 {
+    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+    width:         calc(100% - (#{$spacing-unit} / 2));
+  }
+}
+
+@include media-query($on-palm) {
+  .footer-col {
+    float: none;
+    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+    width:         calc(100% - (#{$spacing-unit} / 2));
+  }
+}
+
+
+
+/**
+ * Page content
+ */
+.page-content {
+  padding: $spacing-unit 0;
+  flex: 1;
+}
+
+.page-heading {
+  @include relative-font-size(2);
+}
+
+.post-list-heading {
+  @include relative-font-size(1.75);
+}
+
+.post-list {
+  margin-left: 0;
+  list-style: none;
+
+  > li {
+    margin-bottom: $spacing-unit;
+  }
+}
+
+.post-meta {
+  font-size: $small-font-size;
+  color: $grey-color;
+}
+
+.post-link {
+  display: block;
+  @include relative-font-size(1.5);
+}
+
+
+
+/**
+ * Posts
+ */
+.post-header {
+  margin: $spacing-unit;
+  margin-bottom: $spacing-unit;
+}
+
+.post-title {
+  @include relative-font-size(2.625);
+  letter-spacing: -1px;
+  line-height: 1;
+
+  @include media-query($on-laptop) {
+    @include relative-font-size(2.25);
+  }
+  
+  @include text-stroke(1, $brand-color);
+  
+  color: $text-color;
+}
+
+.post-content {
+  margin-bottom: $spacing-unit;
+
+  h2 {
+    @include relative-font-size(2);
+
+    @include media-query($on-laptop) {
+      @include relative-font-size(1.75);
+    }
+  }
+
+  h3 {
+    @include relative-font-size(1.625);
+
+    @include media-query($on-laptop) {
+      @include relative-font-size(1.375);
+    }
+  }
+
+  h4 {
+    @include relative-font-size(1.25);
+
+    @include media-query($on-laptop) {
+      @include relative-font-size(1.125);
+    }
+  }
+}
