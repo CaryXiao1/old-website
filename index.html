@@ -45,7 +45,7 @@
         Stanford University. I like to code and 
         work on projects that are interesting.</h3>
     </div>
-    <svg class="svg-icon down-arrow" onclick="cardDown()" viewbox="0 0 25 25"><use xlink:href="/assets/icons.svg#down-arrow"></use></svg></a>
+    <svg class="svg-icon down-arrow" onclick="cardDown()" preserveAspectRatio="xMidYMid meet" viewbox="0 0 25 25"><use xlink:href="/assets/icons.svg#down-arrow"></use></svg></a>
             
   </div>
   <div class="card">
@@ -74,53 +74,7 @@
   </div>
 </div>
 
-<script>
-  let pageNum = 0;
-  // When the user clicks on the button, change page that is shown to user
-  function cardUp() {
-    pageNum--;
-    document.body.scrollTop -= window.innerHeight;
-    document.documentElement.scrollTop -= window.innerHeight;
-  }
-  function cardDown() {
-    pageNum++;
-    document.body.scrollTop += window.innerHeight;
-    document.documentElement.scrollTop += window.innerHeight;
-  }
-  (function() { // TODO: copied code from window.onresize; potentially think of less line-code
-    // corrects part of screen that user should be on during window resize
-    document.body.scrollTop = pageNum * window.innerHeight;
-    document.documentElement.scrollTop = pageNum * window.innerHeight;
 
-    // centers portfolio container
-    let top = window.innerHeight / 2 - (document.getElementById("portfolio-center").clientHeight / 2);
-    let left = window.innerWidth / 2 - (document.getElementById("portfolio-center").clientWidth / 2); 
-    document.getElementById("portfolio-center").style.top = top + "px";
-    document.getElementById("portfolio-center").style.left = left + "px";
-})();
-
-  window.onresize = function() {
-    // corrects part of screen that user should be on during window resize
-    document.body.scrollTop = pageNum * window.innerHeight;
-    document.documentElement.scrollTop = pageNum * window.innerHeight;
-
-    // centers portfolio container
-    var top = window.innerHeight / 2 - (document.getElementById("portfolio-center").clientHeight / 2);
-    var left = window.innerWidth / 2 - (document.getElementById("portfolio-center").clientWidth / 2); 
-    document.getElementById("portfolio-center").style.top = top + "px";
-    document.getElementById("portfolio-center").style.left = left + "px";
-
-    // make portfolio text take up rest of box
-    //var width = document.getElementById("portfolio-center").clientWidth - document.getElementById("main-bust").clientWidth - 25;
-    //document.getElementById("main-text").style.width = width + "px";
-
-    // update man div width - doesn't work correctly with javascript changing text width
-    //width = min(625, window.innerWidth /)
-    //document.getElementById("portfolio-center").clientWidth = width + "px";
-    
-  };
-
-</script>
       </div>
     </main><footer class="site-footer h-card">
   <data class="u-url" href="/"></data>
@@ -131,9 +85,9 @@
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
           <li class="p-name">
-            <a href="https://github.com/CaryXiao1"><svg class="svg-icon" viewbox="1 0 16 16"><use xlink:href="/assets/icons.svg#github"></use></svg></a>
-            <a href="https://www.linkedin.com/in/cary-xiao"><svg class="svg-icon" viewbox="1 0 16 16"><use xlink:href="/assets/icons.svg#linkedin"></use></svg></a>
-            <a href="mailto:caryxiao@stanford.edu"><svg class="svg-icon" viewbox="0 1 24 21"><use xlink:href="/assets/icons.svg#email"></use></svg></a>
+            <a href="https://github.com/CaryXiao1"><svg class="svg-icon" viewbox="0 0 16 16"><use xlink:href="/assets/icons.svg#github"></use></svg></a>
+            <a href="https://www.linkedin.com/in/cary-xiao"><svg class="svg-icon" viewbox="0 0 16 16"><use xlink:href="/assets/icons.svg#linkedin"></use></svg></a>
+            <a href="mailto:caryxiao@stanford.edu"><svg class="svg-icon" id="email" viewbox="0 1 24 21"><use xlink:href="/assets/icons.svg#email"></use></svg></a>
             
           </li>
         </ul>
@@ -149,6 +103,13 @@
   </div>
 
 </footer>
+
+<script src="http://localhost:4000/assets/scroll.js"></script> <!-- Scroll arrows and window resize fixes -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> <!-- jQuery -->
+<script src="http://localhost:4000/assets/jquery.fittext.js"></script> <!-- fitText -->
+<script>
+  jQuery("#main-text").fitText(1.35);
+</script>
 </body>
 
 </html>

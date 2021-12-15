@@ -60,7 +60,7 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 .footer-col-wrapper:after, .wrapper:after { content: ""; display: table; clear: both; }
 
 /** Icons */
-.svg-icon { width: 60px; height: 50px; display: inline-block; fill: black; padding-right: 10px; vertical-align: text-top; }
+.svg-icon { width: 10%; height: 10%; max-width: 60px; height: auto; display: inline-block; fill: black; padding-right: 10px; vertical-align: text-top; }
 
 .social-media-list li + li { padding-top: 5px; }
 
@@ -98,12 +98,10 @@ table td { border: 1px solid #e8e8e8; }
 
 @media screen and (max-width: 600px) { .site-nav { position: absolute; top: 9px; right: 15px; background-color: #FFFFFF; border: 1px solid #e8e8e8; border-radius: 5px; text-align: right; } .site-nav label[for="nav-trigger"] { display: block; float: right; width: 36px; height: 36px; z-index: 2; cursor: pointer; } .site-nav .menu-icon { display: block; float: right; width: 36px; height: 26px; line-height: 0; padding-top: 10px; text-align: center; background-color: #FFFFFF; } .site-nav .menu-icon > svg { fill: #424242; } .site-nav input ~ .trigger { clear: both; display: none; } .site-nav input:checked ~ .trigger { display: block; padding-bottom: 5px; } .site-nav .page-link { display: block; padding: 5px 10px; text-shadow: -1px -1px 0 #a0e281, -1px 0px 0 #a0e281, -1px 1px 0 #a0e281, 0px -1px 0 #a0e281, 0px 0px 0 #a0e281, 0px 1px 0 #a0e281, 1px -1px 0 #a0e281, 1px 0px 0 #a0e281, 1px 1px 0 #a0e281; color: #FFFFFF; margin-left: 20px; } .site-nav .page-link:hover { text-decoration: underline; text-decoration-color: #a0e281; text-underline-offset: 2px; text-decoration-thickness: 1px; } .site-nav .page-link:not(:last-child) { margin-right: 0; } }
 
-.fixed { position: fixed; }
-
 /* Site page classes
  *
 */
-#portfolio-center { position: absolute; top: 25%; left: 25%; padding-left: 5px; padding-right: 5px; width: auto; height: 40%; max-width: 600px; max-height: 250px; }
+#portfolio-center { position: absolute; top: 25%; left: 25%; padding-left: 13px; padding-right: 13px; width: auto; height: 30%; max-width: 600px; max-height: 225px; }
 
 #portfolio-center #main-bust { max-width: 100%; max-height: 100%; width: auto; height: auto; float: left; }
 
@@ -126,6 +124,8 @@ table td { border: 1px solid #e8e8e8; }
 .up-arrow { position: absolute; left: 50%; top: 25px; z-index: 15; transform: translate(-50%, 0); }
 
 .down-arrow { position: absolute; left: 50%; bottom: 25px; z-index: 15; transform: translate(-50%, 0); }
+
+#email { transform: translate(4px, 3px); }
 
 /** Site footer */
 .site-footer { padding: 10px 0; position: fixed; width: 100%; bottom: 0; z-index: 9; }

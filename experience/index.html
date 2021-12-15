@@ -62,9 +62,9 @@
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
           <li class="p-name">
-            <a href="https://github.com/CaryXiao1"><svg class="svg-icon" viewbox="1 0 16 16"><use xlink:href="/assets/icons.svg#github"></use></svg></a>
-            <a href="https://www.linkedin.com/in/cary-xiao"><svg class="svg-icon" viewbox="1 0 16 16"><use xlink:href="/assets/icons.svg#linkedin"></use></svg></a>
-            <a href="mailto:caryxiao@stanford.edu"><svg class="svg-icon" viewbox="0 1 24 21"><use xlink:href="/assets/icons.svg#email"></use></svg></a>
+            <a href="https://github.com/CaryXiao1"><svg class="svg-icon" viewbox="0 0 16 16"><use xlink:href="/assets/icons.svg#github"></use></svg></a>
+            <a href="https://www.linkedin.com/in/cary-xiao"><svg class="svg-icon" viewbox="0 0 16 16"><use xlink:href="/assets/icons.svg#linkedin"></use></svg></a>
+            <a href="mailto:caryxiao@stanford.edu"><svg class="svg-icon" id="email" viewbox="0 1 24 21"><use xlink:href="/assets/icons.svg#email"></use></svg></a>
             
           </li>
         </ul>
@@ -80,6 +80,13 @@
   </div>
 
 </footer>
+
+<script src="http://localhost:4000/assets/scroll.js"></script> <!-- Scroll arrows and window resize fixes -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> <!-- jQuery -->
+<script src="http://localhost:4000/assets/jquery.fittext.js"></script> <!-- fitText -->
+<script>
+  jQuery("#main-text").fitText(1.35);
+</script>
 </body>
 
 </html>
