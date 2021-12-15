@@ -183,6 +183,7 @@
     width:100%; 
 
     .card-page {
+      overflow: visible;
       margin: $spacing-unit;
       margin-top: $spacing-unit * 3;
       padding: $spacing-unit;
@@ -223,6 +224,12 @@
 
 #email {
   transform: translate(4px, 3px);
+}
+
+.hobby-img {
+  max-height: 200px;
+  padding-right: 5px;
+  max-width: 30%;
 }
 
 /**
@@ -353,15 +360,17 @@
  * Posts
  */
 .post-header {
+
   margin: $spacing-unit;
   margin-bottom: $spacing-unit;
+  z-index: 10;
 }
 
 .post-title {
   @include relative-font-size(2.625);
   letter-spacing: -1px;
   line-height: 1;
-
+  overflow: visible;
   @include media-query($on-laptop) {
     @include relative-font-size(2.25);
   }
