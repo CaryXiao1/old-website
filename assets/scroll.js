@@ -44,12 +44,13 @@ $(document).ready( function () { // TODO: copied code from window.onresize; pote
     document.documentElement.scrollTop = pageNum * window.innerHeight;
 
     // centers portfolio container
+
     document.getElementById("portfolio-center").style.left = "0" + "px";
     var top = window.innerHeight / 2 - (document.getElementById("portfolio-center").clientHeight / 2);
     var left = window.innerWidth / 2 - (document.getElementById("portfolio-center").clientWidth / 2); 
     document.getElementById("portfolio-center").style.top = top + "px";
     document.getElementById("portfolio-center").style.left = left + "px";
-
+    document.getElementById("portfolio-center").removeAttribute("hidden");
     // make portfolio text take up rest of box
     //var width = document.getElementById("portfolio-center").clientWidth - document.getElementById("main-bust").clientWidth - 25;
     //document.getElementById("main-text").style.width = width + "px";

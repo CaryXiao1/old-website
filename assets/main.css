@@ -101,15 +101,15 @@ table td { border: 1px solid #e8e8e8; }
 /* Site page classes
  *
 */
-#portfolio-center { position: absolute; top: 25%; left: 25%; padding-left: 13px; padding-right: 13px; width: auto; height: 30%; max-width: 600px; max-height: 225px; }
+#portfolio-center { position: absolute; top: 25%; left: 25%; padding-left: 13px; padding-right: 13px; width: auto; height: 30%; max-width: 600px; max-height: 225px; min-height: 125px; }
 
 #portfolio-center #main-bust { max-width: 100%; max-height: 100%; width: auto; height: auto; float: left; }
 
-#portfolio-center #main-text { display: flex; justify-content: center; align-items: center; height: 100%; width: 55%; float: right; padding-left: 15px; }
+#portfolio-center #main-text { overflow: visible; display: flex; justify-content: center; align-items: center; height: 100%; width: 55%; float: right; padding-left: 15px; }
 
 .card-wrap { font-size: 0; position: absolute; top: 0; left: 0; height: 100%; width: 100%; display: flex; flex-flow: row wrap; justify-content: space-around; }
 
-.card-wrap .card { font-size: 16px; position: relative; height: 100%; width: 100%; }
+.card-wrap .card { font-size: 16px; overflow: hidden; position: relative; height: 100%; width: 100%; }
 
 .card-wrap .card .card-page { margin: 30px; margin-top: 90px; padding: 30px; }
 
@@ -136,11 +136,11 @@ table td { border: 1px solid #e8e8e8; }
 
 .footer-copyright { position: absolute; bottom: 0; right: 0; float: right; color: black; }
 
-.footer-col-wrapper { font-size: 16px; position: relative; color: #828282; margin-left: -15px; }
+.footer-col-wrapper { font-size: 16px; position: relative; color: #828282; margin-left: 0; }
 
 .footer-col { float: left; margin-bottom: 0; padding-left: 15px; }
 
-.footer-col-1 { width: -webkit-calc(35% - (30px / 2)); width: calc(35% - (30px / 2)); }
+.footer-col-1 { border: 1px solid green; width: -webkit-calc(35% - (30px / 2)); width: calc(35% - (30px / 2)); }
 
 .footer-col-2 { width: -webkit-calc(20% - (30px / 2)); width: calc(20% - (30px / 2)); }
 
