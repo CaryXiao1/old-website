@@ -5,10 +5,12 @@ $(document).ready( function () { // TODO: copied code from window.onresize; pote
 
     // centers portfolio container
     let top = window.innerHeight / 2 - (document.getElementById("portfolio-center").clientHeight / 2);
-    let left = window.innerWidth / 2 - (document.getElementById("portfolio-center").clientWidth / 2); 
+    let left = 0; // window.innerWidth / 2 - (document.getElementById("portfolio-center").clientWidth / 2); 
     document.getElementById("portfolio-center").style.top = top + "px";
     document.getElementById("portfolio-center").style.left = left + "px";
 
+    left =  window.innerWidth / 2 - (document.getElementById("portfolio-center").clientWidth / 2);
+    document.getElementById("portfolio-center").style.left = left + "px";
     // resize svg icons
     /*
     var shrinkSize = min(window.innerHeight * 0.08, window.innerWidth * 0.10);
@@ -19,6 +21,7 @@ $(document).ready( function () { // TODO: copied code from window.onresize; pote
       x[i].style.width = newWidth;
       x[i].style.height = newHeight;
     }*/
+  jQuery("#main-text").fitText(1.35);
   });
   
   
@@ -41,6 +44,7 @@ $(document).ready( function () { // TODO: copied code from window.onresize; pote
     document.documentElement.scrollTop = pageNum * window.innerHeight;
 
     // centers portfolio container
+    document.getElementById("portfolio-center").style.left = "0" + "px";
     var top = window.innerHeight / 2 - (document.getElementById("portfolio-center").clientHeight / 2);
     var left = window.innerWidth / 2 - (document.getElementById("portfolio-center").clientWidth / 2); 
     document.getElementById("portfolio-center").style.top = top + "px";
