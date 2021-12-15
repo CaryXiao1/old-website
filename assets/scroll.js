@@ -4,6 +4,7 @@ $(document).ready( function () { // TODO: copied code from window.onresize; pote
   document.body.scrollTop = pageNum * window.innerHeight;
   document.documentElement.scrollTop = pageNum * window.innerHeight;
 
+
   // centers portfolio container
   let top = window.innerHeight / 2 - (document.getElementById("portfolio-center").clientHeight / 2);
   let left = 0; // window.innerWidth / 2 - (document.getElementById("portfolio-center").clientWidth / 2); 
@@ -15,6 +16,17 @@ $(document).ready( function () { // TODO: copied code from window.onresize; pote
 
 jQuery("#main-text").fitText(1.35);
 });
+
+  // force desktop on mobile devices
+$(window).resize(function() {
+  var mobileWidth =  (window.innerWidth > 0) ? 
+                      window.innerWidth : 
+                      screen.width;
+  var viewport = (mobileWidth > 360) ?
+                  'width=device-width, initial-scale=1.0' :
+                  'width=1200';
+  $("meta[name=viewport]").attr('content', viewport);
+}).resize(); 
 
 
 let pageNum = 0;
