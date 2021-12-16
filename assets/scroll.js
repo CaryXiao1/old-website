@@ -1,9 +1,16 @@
 
 $(document).ready( function () { // TODO: copied code from window.onresize; potentially think of less line-code
   // corrects part of screen that user should be on during window resize
-  document.body.scrollTop = pageNum * window.innerHeight;
-  document.documentElement.scrollTop = pageNum * window.innerHeight;
+  // document.body.scrollTop = pageNum * window.innerHeight;
+  // document.documentElement.scrollTop = pageNum * window.innerHeight;
 
+  // resize window if on mobile
+  /*  if(window.matchMedia("(max-width: 767px)").matches){
+    // The viewport is less than 768 pixels wide
+    alert("This is a mobile device.");
+    window.visualViewport
+  } */
+  
 
   // centers portfolio container
   let top = window.innerHeight / 2 - (document.getElementById("portfolio-center").clientHeight / 2);
@@ -14,7 +21,12 @@ $(document).ready( function () { // TODO: copied code from window.onresize; pote
   left =  window.innerWidth / 2 - (document.getElementById("portfolio-center").clientWidth / 2);
   document.getElementById("portfolio-center").style.left = left + "px";
 
-jQuery("#main-text").fitText(1.35);
+  $('.try').toggle(function() {
+    $(".inner").animate({top: '-=100px'}, 2000);
+  }, function() {
+    $(".inner").animate({top: '+=100px'}, 2000);
+  });
+  jQuery("#main-text").fitText(1.35);
 });
 
   // force desktop on mobile devices
@@ -37,10 +49,13 @@ function cardUp() {
   document.documentElement.scrollTop -= window.innerHeight;
 }
 function cardDown() {
+  $("#page-" + "pageNum").hide("slide", { direction: "up" }, 5000);
   pageNum++;
   document.body.scrollTop += window.innerHeight;
   document.documentElement.scrollTop += window.innerHeight;
 }
+
+
 
 window.onresize = function() {
   // corrects part of screen that user should be on during window resize

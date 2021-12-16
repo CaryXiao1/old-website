@@ -4,7 +4,7 @@ layout: default
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <div class="card-wrap">
-  <div class="card">
+  <div class="card" id="page-1">
   <!--<h1 class="page-heading">work in progress!</h1>-->
     <div id="portfolio-center">
       <img id="main-bust" src="../img/main-bust.jpg">
@@ -14,12 +14,12 @@ layout: default
         prjects that can help others.
       </h3>
     </div>
-    <svg class="svg-icon down-arrow" onclick="cardDown()" preserveAspectRatio="xMidYMid meet" viewbox="0 0 25 25"><use xlink:href="{{ '/assets/icons.svg#down-arrow' | relative_url }}"></use></svg></a>
+    <svg class="svg-icon down-arrow" id="d-arr-1"onclick="cardDown()" preserveAspectRatio="xMidYMid meet" viewbox="0 0 25 25"><use xlink:href="{{ '/assets/icons.svg#down-arrow' | relative_url }}"></use></svg></a>
             
   </div>
   <div class="card">
     <div class="card-page"> 
-      <svg class="svg-icon up-arrow" onclick="cardUp()" preserveAspectRatio="xMidYMid meet" viewbox="0 0 25 25"><use xlink:href="{{ '/assets/icons.svg#up-arrow' | relative_url }}"></use></svg>
+      <svg class="svg-icon up-arrow" id="u-arr-1" onclick="cardUp()" preserveAspectRatio="xMidYMid meet" viewbox="0 0 25 25"><use xlink:href="{{ '/assets/icons.svg#up-arrow' | relative_url }}"></use></svg>
     
         <h1 class="post-title">some stats</h1>
         <h1>education</h1>
@@ -31,11 +31,11 @@ layout: default
         <h1>notable honors</h1>
         <h3>3-time ISEF Finalist, Oracle Academy Award Winner, Presidential Scholar Semifinalist</h3>
       </div>
-      <svg class="svg-icon down-arrow" onclick="cardDown()" preserveAspectRatio="xMidYMid meet" viewbox="0 0 25 25"><use xlink:href="{{ '/assets/icons.svg#down-arrow' | relative_url }}"></use></svg></a>
+      <svg class="svg-icon down-arrow" id="d-arr-2" onclick="cardDown()" preserveAspectRatio="xMidYMid meet" viewbox="0 0 25 25"><use xlink:href="{{ '/assets/icons.svg#down-arrow' | relative_url }}"></use></svg></a>
     </div>
 
   <div class="card">
-    <svg class="svg-icon up-arrow" id="up-arrow-3" onclick="cardUp()" viewbox="0 0 25 25"><use xlink:href="{{ '/assets/icons.svg#up-arrow' | relative_url }}"></use></svg></a>
+    <svg class="svg-icon up-arrow" id="u-arr-2" onclick="cardUp()" viewbox="0 0 25 25"><use xlink:href="{{ '/assets/icons.svg#up-arrow' | relative_url }}"></use></svg></a>
     <div class="card-page">
       <h1 class="post-title">helpful links</h1>
       <a class="link" href="https://drive.google.com/file/d/1bdcowJ6aFlHPypu-JxlPAM9jSO42xivI/view?usp=sharing"><h3>resume</h3></a>
