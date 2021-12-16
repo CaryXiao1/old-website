@@ -20,42 +20,49 @@ $(document).ready( function () { // TODO: copied code from window.onresize; pote
 
   left =  window.innerWidth / 2 - (document.getElementById("portfolio-center").clientWidth / 2);
   document.getElementById("portfolio-center").style.left = left + "px";
-
-  $('.try').toggle(function() {
-    $(".inner").animate({top: '-=100px'}, 2000);
-  }, function() {
-    $(".inner").animate({top: '+=100px'}, 2000);
-  });
-  jQuery("#main-text").fitText(1.35);
 });
-
-  // force desktop on mobile devices
-$(window).resize(function() {
-  var mobileWidth =  (window.innerWidth > 0) ? 
-                      window.innerWidth : 
-                      screen.width;
-  var viewport = (mobileWidth > 360) ?
-                  'width=device-width, initial-scale=1.0' :
-                  'width=1200';
-  $("meta[name=viewport]").attr('content', viewport);
-}).resize(); 
-
 
 let pageNum = 0;
 // When the user clicks on the button, change page that is shown to user
 function cardUp() {
-  pageNum--;
-  document.body.scrollTop -= window.innerHeight;
-  document.documentElement.scrollTop -= window.innerHeight;
+  if (pageNum > 0) {
+    document.getElementById("page-" + pageNum).setAttribute("hidden", true);
+    pageNum--;
+    document.getElementById("page-" + pageNum).removeAttribute("hidden");
+    document.getElementById("d-arr-wrap").removeAttribute("hidden");
+
+    if (pageNum == 0) {
+      document.getElementById("u-arr-wrap").setAttribute("hidden", true);
+    }
+  }
 }
 function cardDown() {
-  $("#page-" + "pageNum").hide("slide", { direction: "up" }, 5000);
-  pageNum++;
-  document.body.scrollTop += window.innerHeight;
-  document.documentElement.scrollTop += window.innerHeight;
+  if (pageNum < 2) {
+    document.getElementById("page-" + pageNum).setAttribute("hidden", true);
+    pageNum++;
+    document.getElementById("page-" + pageNum).removeAttribute("hidden");
+    document.getElementById("u-arr-wrap").removeAttribute("hidden");
+
+    if (pageNum == 2) {
+      document.getElementById("d-arr-wrap").setAttribute("hidden", true);
+    }
+  }
+
+  
+  //document.body.scrollTop += window.innerHeight;
+  //document.documentElement.scrollTop += window.innerHeight;
 }
+$(document).keydown(function(e) {
+  switch (e.which) {
+    case 38: //up arrow key
+      cardUp();
+      break;
+    case 40: //bottom arrow key
+      cardDown();
+      break;
+    }
 
-
+});
 
 window.onresize = function() {
   // corrects part of screen that user should be on during window resize

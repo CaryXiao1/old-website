@@ -4,8 +4,12 @@ layout: default
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <div class="card-wrap">
-  <div class="card" id="page-1">
-  <!--<h1 class="page-heading">work in progress!</h1>-->
+  <div class="card" id="page">
+    <div  id="u-arr-wrap" hidden>    
+      <svg class="svg-icon up-arrow" id="u-arr" onclick="cardUp()" preserveAspectRatio="xMidYMid meet" viewbox="0 0 25 25" hidden><use xlink:href="{{ '/assets/icons.svg#up-arrow' | relative_url }}"></use></svg>
+    </div>
+  <!-- page 1 -->
+  <div id="page-0"> <!-- index starting at 0 -->
     <div id="portfolio-center">
       <img id="main-bust" src="../img/main-bust.jpg">
       <h3 id="main-text">Hey There! <br>
@@ -14,29 +18,22 @@ layout: default
         prjects that can help others.
       </h3>
     </div>
-    <svg class="svg-icon down-arrow" id="d-arr-1"onclick="cardDown()" preserveAspectRatio="xMidYMid meet" viewbox="0 0 25 25"><use xlink:href="{{ '/assets/icons.svg#down-arrow' | relative_url }}"></use></svg></a>
-            
   </div>
-  <div class="card">
-    <div class="card-page"> 
-      <svg class="svg-icon up-arrow" id="u-arr-1" onclick="cardUp()" preserveAspectRatio="xMidYMid meet" viewbox="0 0 25 25"><use xlink:href="{{ '/assets/icons.svg#up-arrow' | relative_url }}"></use></svg>
-    
-        <h1 class="post-title">some stats</h1>
-        <h1>education</h1>
-        <h3>Stanford University: c/o '25</h3>
-        <h3>Alabama School of Math & Science: c/o '21</h3>
-        <h1>skills</h1>
-        <h3>Programming: C++, Python, Java</h3>
-        <h3>Software: Qt Creator, VS Code, Eclipse</h3>
-        <h1>notable honors</h1>
-        <h3>3-time ISEF Finalist, Oracle Academy Award Winner, Presidential Scholar Semifinalist</h3>
-      </div>
-      <svg class="svg-icon down-arrow" id="d-arr-2" onclick="cardDown()" preserveAspectRatio="xMidYMid meet" viewbox="0 0 25 25"><use xlink:href="{{ '/assets/icons.svg#down-arrow' | relative_url }}"></use></svg></a>
-    </div>
+    <!-- page 2 -->
+    <div class="card-page" id="page-1" hidden>  
+      <h1 class="post-title">some stats</h1>
+      <h1>education</h1>
+      <h3>Stanford University: c/o '25</h3>
+      <h3>Alabama School of Math & Science: c/o '21</h3>
+      <h1>skills</h1>
+      <h3>Programming: C++, Python, Java</h3>
+      <h3>Software: Qt Creator, VS Code, Eclipse</h3>
+      <h1>notable honors</h1>
+      <h3>3-time ISEF Finalist, Oracle Academy Award Winner, Presidential Scholar Semifinalist</h3>
 
-  <div class="card">
-    <svg class="svg-icon up-arrow" id="u-arr-2" onclick="cardUp()" viewbox="0 0 25 25"><use xlink:href="{{ '/assets/icons.svg#up-arrow' | relative_url }}"></use></svg></a>
-    <div class="card-page">
+    </div>
+    <!-- page 3 -->
+    <div class="card-page" id="page-2" hidden>
       <h1 class="post-title">helpful links</h1>
       <a class="link" href="https://drive.google.com/file/d/1bdcowJ6aFlHPypu-JxlPAM9jSO42xivI/view?usp=sharing"><h3>resume</h3></a>
       <a class="link" href="https://scholar.google.com/scholar?hl=en&as_sdt=0%2C1&q=%22Cary+Xiao%22&btnG="><h3>publications</h3></a>
@@ -46,6 +43,8 @@ layout: default
       <img src="/img/sfmarathon.jpg" class="hobby-img">
       <img src="/img/yosemite.jpg" class="hobby-img">
     </div>
-    
+    <div id="d-arr-wrap">  
+      <svg class="svg-icon down-arrow" id="d-arr" onclick="cardDown()" preserveAspectRatio="xMidYMid meet" viewbox="0 0 25 25"><use xlink:href="{{ '/assets/icons.svg#down-arrow' | relative_url }}"></use></svg></a>
+    </div>
   </div>
 </div>
