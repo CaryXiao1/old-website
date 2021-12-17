@@ -26,8 +26,8 @@ function cardUp() {
       
       document.getElementById("page-" + pageNum).style.top = '-70em';
       document.getElementById("page-" + pageNum).removeAttribute("hidden");
-      if (targetNum == 0) {
-        var left = 0; // TODO: fix non-recentered when you resize not on page 0
+      if (targetNum != 0) {
+        var left = 0;
         document.getElementById("page-0").style.left = left + "px";
         left = window.innerWidth / 2 - (document.getElementById("page-0").clientWidth / 2); 
         document.getElementById("page-0").style.left = left + "px";
