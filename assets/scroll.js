@@ -2,16 +2,17 @@
 $(document).ready( function () {
   // centers portfolio container
   recenter();
-
+  resizeCardContent();
   // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
   let vh = window.innerHeight * 0.01;
   // Then we set the value in the --vh custom property to the root of the document
   document.documentElement.style.setProperty('--vh', `${vh}px`);
-
+  textFit(document.getElementById('main-text'), {multiLine: true, maxFontSize: 23});
 });
 
 // fitText
-jQuery("#main-text").fitText(1.4);
+
+// jQuery("#main-text").fitText(1.4);
 
 let pageNum = 0;
 // When the user clicks on the button, animate and change page that is shown to user
@@ -69,6 +70,11 @@ function cardDown() {
   }
 }
 
+function resizeCardContent() {
+  document.getElementById("page-1").style.maxHeight = (window.innerHeight - 180) + "px"; // 90 = spacing-unit * 3
+  document.getElementById("page-2").style.maxHeight = (window.innerHeight - 180) + "px"; // 90 = spacing-unit * 3
+}
+
 function recenter() {
     // centers portfolio container
     document.getElementById("page-0").style.left = "0" + "px";
@@ -92,6 +98,9 @@ $(document).keydown(function(e) {
 
 window.onresize = function() {
  recenter();
+ resizeCardContent();
+
+ textFit(document.getElementById('main-text'), {multiLine: true, maxFontSize: 23});
  // change viewport stuff
  let vh = window.innerHeight * 0.01;
  document.documentElement.style.setProperty('--vh', `${vh}px`);

@@ -132,7 +132,7 @@
 */
 #page-0 { // used for main card w/ picture on right and text on left
   position: absolute;
-  top: 25%; // TODO: set top and left in js
+  top: 25%;
   left: 25%;
   padding-left: 13px;
   padding-right: 13px;
@@ -143,7 +143,7 @@
   min-height: 125px;
   // border: 1px solid blue;
   #main-bust {
-    max-width: 100%;
+    max-width: 45%;
     max-height: 100%;
     width: auto;
     height: auto;
@@ -182,11 +182,14 @@
     height:100%;
     width:100%; 
 
+    
     .card-page {
-      overflow: visible;
-      margin: $spacing-unit;
-      margin-top: $spacing-unit * 3;
-      padding: $spacing-unit;
+      // max-height: 80%;
+      // border: 1px solid blue;
+      overflow: auto;
+      margin: 2.5%;
+      margin-top: $spacing-unit * 2.5;
+      padding: 2.5%;
     }
   }
 }
