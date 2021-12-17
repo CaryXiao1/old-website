@@ -1,23 +1,24 @@
 
 $(document).ready( function () {
-  // centers portfolio container
+  // centers portfolio container & makes card contents visible if needed
   recenter();
   resizeCardContent();
   // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
   let vh = window.innerHeight * 0.01;
   // Then we set the value in the --vh custom property to the root of the document
   document.documentElement.style.setProperty('--vh', `${vh}px`);
+  // set adaptive font size for main text
   textFit(document.getElementById('main-text'), {multiLine: true, maxFontSize: 23});
 });
 
-// fitText
-
-// jQuery("#main-text").fitText(1.4);
+// TODO: fix resize height thing not working on non-front page cards (for live website)
 
 let pageNum = 0;
+let animating = false;
 // When the user clicks on the button, animate and change page that is shown to user
 function cardUp() {
-  if (pageNum > 0) { // TODO: fix onclick spam w/ object bind thingy
+  if (!animating && pageNum > 0) {
+    animating = true;
     $("#page-" + pageNum).animate({
       top: '100vh'
     }, 400, function() {
@@ -25,9 +26,7 @@ function cardUp() {
       document.getElementById("page-" + pageNum).style.top = 0;
       pageNum--;
       var targetNum = (pageNum != 0) ? 0 : window.innerHeight / 2.8 - (document.getElementById("page-0").clientHeight / 2);
-
       document.getElementById("d-arr-wrap").removeAttribute("hidden");
-      
       document.getElementById("page-" + pageNum).style.top = '-100vh';
       document.getElementById("page-" + pageNum).removeAttribute("hidden");
       if (targetNum != 0) {
@@ -38,7 +37,9 @@ function cardUp() {
       }
       $('#page-' + pageNum).animate({
         top: targetNum
-      }, 400)
+      }, 400, function() {
+        animating = false;
+      })
     })
     
     if (pageNum == 1) {
@@ -48,22 +49,24 @@ function cardUp() {
 }
 
 function cardDown() {
-  if (pageNum < 2) {
+  if (!animating && pageNum < 2) {
+    animating = true;
     $("#page-" + pageNum).animate({
       top: '-100vh'
       }, 400, function() {
-      document.getElementById("page-" + pageNum).setAttribute("hidden", true);
-      document.getElementById("page-" + pageNum).style.top = 0;
-      pageNum++;
-      document.getElementById("u-arr-wrap").removeAttribute("hidden");
-      document.getElementById("page-" + pageNum).removeAttribute("hidden");
-      document.getElementById("page-" + pageNum).style.top = '100vh';
+        document.getElementById("page-" + pageNum).setAttribute("hidden", true);
+        document.getElementById("page-" + pageNum).style.top = 0;
+        pageNum++;
+        document.getElementById("u-arr-wrap").removeAttribute("hidden");
+        document.getElementById("page-" + pageNum).removeAttribute("hidden");
+        document.getElementById("page-" + pageNum).style.top = '100vh';
 
-      $('#page-' + pageNum).animate({
-        top: 0
-      }, 400)
+        $('#page-' + pageNum).animate({
+          top: 0
+        }, 400, function () {
+          animating = false;
+        })
     })
-    // alert(pageNum);
     if (pageNum == 1) {
       document.getElementById("d-arr-wrap").setAttribute("hidden", true);
     }
@@ -82,6 +85,9 @@ function recenter() {
     var left = window.innerWidth / 2 - (document.getElementById("page-0").clientWidth / 2); 
     document.getElementById("page-0").style.top = top + "px";
     document.getElementById("page-0").style.left = left + "px";
+
+    // set max width for main-bust
+    document.getElementById("main-bust").style.maxWidth = (document.getElementById("page-0").clientWidth * 0.45 - 14) + "px";
 }
 
 $(document).keydown(function(e) {
