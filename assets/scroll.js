@@ -1,19 +1,19 @@
 
 $(document).ready( function () {
   // centers portfolio container
-  let top = window.innerHeight / 2 - (document.getElementById("page-0").clientHeight / 2);
-  let left = 0; // window.innerWidth / 2 - (document.getElementById("portfolio-center").clientWidth / 2); 
-  document.getElementById("page-0").style.top = top + "px";
-  document.getElementById("page-0").style.left = left + "px";
+  recenter();
 
-  left =  window.innerWidth / 2 - (document.getElementById("page-0").clientWidth / 2);
-  document.getElementById("page-0").style.left = left + "px";
+  // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+  let vh = window.innerHeight * 0.01;
+  // Then we set the value in the --vh custom property to the root of the document
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+
 });
 
 let pageNum = 0;
 // When the user clicks on the button, animate and change page that is shown to user
 function cardUp() {
-  if (pageNum > 0) {
+  if (pageNum > 0) { // TODO: fix onclick spam w/ object bind thingy
     $("#page-" + pageNum).animate({
       top: '70em'
     }, 400, function() {
@@ -21,10 +21,17 @@ function cardUp() {
       document.getElementById("page-" + pageNum).style.top = 0;
       pageNum--;
       var targetNum = (pageNum != 0) ? 0 : window.innerHeight / 2.8 - (document.getElementById("page-0").clientHeight / 2);
-      if (targetNum != 0) 
+
       document.getElementById("d-arr-wrap").removeAttribute("hidden");
+      
       document.getElementById("page-" + pageNum).style.top = '-70em';
       document.getElementById("page-" + pageNum).removeAttribute("hidden");
+      if (targetNum == 0) {
+        var left = 0; // TODO: fix non-recentered when you resize not on page 0
+        document.getElementById("page-0").style.left = left + "px";
+        left = window.innerWidth / 2 - (document.getElementById("page-0").clientWidth / 2); 
+        document.getElementById("page-0").style.left = left + "px";
+      }
       $('#page-' + pageNum).animate({
         top: targetNum
       }, 400)
@@ -59,6 +66,15 @@ function cardDown() {
   }
 }
 
+function recenter() {
+    // centers portfolio container
+    document.getElementById("page-0").style.left = "0" + "px";
+    var top = window.innerHeight / 2 - (document.getElementById("page-0").clientHeight / 2);
+    var left = window.innerWidth / 2 - (document.getElementById("page-0").clientWidth / 2); 
+    document.getElementById("page-0").style.top = top + "px";
+    document.getElementById("page-0").style.left = left + "px";
+}
+
 $(document).keydown(function(e) {
   switch (e.which) {
     case 38: //up arrow key
@@ -72,12 +88,8 @@ $(document).keydown(function(e) {
 });
 
 window.onresize = function() {
-  // centers portfolio container
-  document.getElementById("page-0").style.left = "0" + "px";
-  var top = window.innerHeight / 2 - (document.getElementById("page-0").clientHeight / 2);
-  var left = window.innerWidth / 2 - (document.getElementById("page-0").clientWidth / 2); 
-  document.getElementById("page-0").style.top = top + "px";
-  document.getElementById("page-0").style.left = left + "px";
-  document.getElementById("page-0").removeAttribute("hidden");
-  
+ recenter();
+ // change viewport stuff
+ let vh = window.innerHeight * 0.01;
+ document.documentElement.style.setProperty('--vh', `${vh}px`);
 };
