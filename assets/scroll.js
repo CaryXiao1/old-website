@@ -1,8 +1,9 @@
 
 $(document).ready( function () {
+  resizeCardContent();
   // centers portfolio container & makes card contents visible if needed
   recenter();
-  resizeCardContent();
+
   // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
   let vh = window.innerHeight * 0.01;
   // Then we set the value in the --vh custom property to the root of the document
@@ -74,8 +75,10 @@ function cardDown() {
 }
 
 function resizeCardContent() {
-  document.getElementById("page-1").style.maxHeight = (window.innerHeight - 180) + "px"; // 90 = spacing-unit * 3
-  document.getElementById("page-2").style.maxHeight = (window.innerHeight - 180) + "px"; // 90 = spacing-unit * 3
+  let cardPage = document.getElementsByClassName('card-page');
+  for (var i = 0; i < cardPage.length; i++) {
+    cardPage[i].style.maxHeight = (window.innerHeight - 180) + "px"; // 90 = spacing-unit * 3
+  }
 }
 
 function recenter() {
@@ -108,8 +111,9 @@ $(window).resize(function() {
 });
 
 window.onresize = function() {
-  recenter();
   resizeCardContent();
+  recenter();
+
 
   // change viewport stuff
   let vh = window.innerHeight * 0.01;
