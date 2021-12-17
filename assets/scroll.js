@@ -10,12 +10,15 @@ $(document).ready( function () {
 
 });
 
+// fitText
+jQuery("#main-text").fitText(1.4);
+
 let pageNum = 0;
 // When the user clicks on the button, animate and change page that is shown to user
 function cardUp() {
   if (pageNum > 0) { // TODO: fix onclick spam w/ object bind thingy
     $("#page-" + pageNum).animate({
-      top: '70em'
+      top: '100vh'
     }, 400, function() {
       document.getElementById("page-" + pageNum).setAttribute("hidden", true);
       document.getElementById("page-" + pageNum).style.top = 0;
@@ -24,7 +27,7 @@ function cardUp() {
 
       document.getElementById("d-arr-wrap").removeAttribute("hidden");
       
-      document.getElementById("page-" + pageNum).style.top = '-70em';
+      document.getElementById("page-" + pageNum).style.top = '-100vh';
       document.getElementById("page-" + pageNum).removeAttribute("hidden");
       if (targetNum != 0) {
         var left = 0;
@@ -46,14 +49,14 @@ function cardUp() {
 function cardDown() {
   if (pageNum < 2) {
     $("#page-" + pageNum).animate({
-      top: '-70em'
+      top: '-100vh'
       }, 400, function() {
       document.getElementById("page-" + pageNum).setAttribute("hidden", true);
       document.getElementById("page-" + pageNum).style.top = 0;
       pageNum++;
       document.getElementById("u-arr-wrap").removeAttribute("hidden");
       document.getElementById("page-" + pageNum).removeAttribute("hidden");
-      document.getElementById("page-" + pageNum).style.top = '70em';
+      document.getElementById("page-" + pageNum).style.top = '100vh';
 
       $('#page-' + pageNum).animate({
         top: 0
