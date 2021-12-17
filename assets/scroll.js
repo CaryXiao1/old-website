@@ -90,7 +90,7 @@ function recenter() {
     document.getElementById("page-0").style.left = left + "px";
 
     // set max width for main-bust
-    document.getElementById("main-bust").style.maxWidth = (document.getElementById("page-0").clientWidth * 0.45 - 14) + "px";
+    document.getElementById("main-bust").style.maxWidth = (document.getElementById("page-0").clientWidth * 0.45 - 35) + "px";
 }
 
 $(document).keydown(function(e) {
