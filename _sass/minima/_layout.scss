@@ -130,7 +130,7 @@
 /* Site page classes
  *
 */
-#portfolio-center { // used for main card w/ picture on right and text on left
+#page-0 { // used for main card w/ picture on right and text on left
   position: absolute;
   top: 25%; // TODO: set top and left in js
   left: 25%;
@@ -201,6 +201,10 @@
     text-decoration-thickness: 3px;
   }
 
+}
+
+.animate {
+  position: absolute;
 }
 
 /* Scroll Arrows
