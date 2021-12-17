@@ -11,7 +11,7 @@ $(document).ready( function () {
   textFit(document.getElementById('main-text'), {multiLine: true, maxFontSize: 23});
 });
 
-// TODO: fix resize height thing not working on non-front page cards (for live website)
+// TODO: fix resize height thing not working on non-front page cards
 
 let pageNum = 0;
 let animating = false;
@@ -41,7 +41,7 @@ function cardUp() {
         animating = false;
       })
     })
-    
+  
     if (pageNum == 1) {
       document.getElementById("u-arr-wrap").setAttribute("hidden", true);
     }
@@ -102,12 +102,19 @@ $(document).keydown(function(e) {
 
 });
 
-window.onresize = function() {
- recenter();
- resizeCardContent();
+// use jQuery resize for textFit because window has bug resizing when placed in JS .onresize
+$(window).resize(function() { 
+  textFit(document.getElementById('main-text'), {multiLine: true, maxFontSize: 23});
+});
 
- textFit(document.getElementById('main-text'), {multiLine: true, maxFontSize: 23});
- // change viewport stuff
- let vh = window.innerHeight * 0.01;
- document.documentElement.style.setProperty('--vh', `${vh}px`);
+window.onresize = function() {
+  recenter();
+  resizeCardContent();
+
+  // change viewport stuff
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+ 
+  document.body.style.height = 'calc(var(--vh, 1vh) * 100)';
+  document.body.style.minHeight = 'calc(var(--vh, 1vh) * 100)';
 };
