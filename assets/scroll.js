@@ -9,9 +9,8 @@ $(document).ready( function () {
   // Then we set the value in the --vh custom property to the root of the document
   document.documentElement.style.setProperty('--vh', `${vh}px`);
   // set adaptive font size for main text
-  textFit(document.getElementById('main-text'), {multiLine: true, maxFontSize: 23});
-
-  document.getElementById("main-text").style.width = (document.getElementById("page-0").clientWidth - document.getElementById("main-bust").clientWidth) - 50 + "px";
+  textFit(document.getElementById('main-text'), {multiLine: true, minFontSize: 14, maxFontSize: 21});
+  // document.getElementById("main-text").style.width = (document.getElementById("page-0").clientWidth - document.getElementById("main-bust").clientWidth) - 50 + "px";
     
 });
 
@@ -91,7 +90,7 @@ function recenter() {
     var left = window.innerWidth / 2 - (document.getElementById("page-0").clientWidth / 2); 
     document.getElementById("page-0").style.top = top + "px";
     document.getElementById("page-0").style.left = left + "px";
-
+    document.getElementById("main-bust").style.maxWidth = (document.getElementById("page-0").clientWidth * 0.45 - 35) + "px";
     // set max width for main-bust
     // document.getElementById("main-bust").style.maxWidth = (document.getElementById("page-0").clientWidth * 0.45 - 35) + "px";
 }
@@ -110,8 +109,8 @@ $(document).keydown(function(e) {
 
 // use jQuery resize for textFit because window has bug resizing when placed in JS .onresize
 $(window).resize(function() { 
-  textFit(document.getElementById('main-text'), {multiLine: true, maxFontSize: 23});
-  document.getElementById("main-text").style.width = (document.getElementById("page-0").clientWidth - document.getElementById("main-bust").clientWidth) - 50 + "px";
+  textFit(document.getElementById('main-text'), {multiLine: true, minFontSize: 14, maxFontSize: 21});
+  // document.getElementById("main-text").style.width = (document.getElementById("page-0").clientWidth - document.getElementById("main-bust").clientWidth) - 100 + "px";
     
 });
 
