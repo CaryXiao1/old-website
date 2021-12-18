@@ -136,14 +136,15 @@
   left: 25%;
   padding-left: 13px;
   padding-right: 13px;
-  width: auto;
+  width: 95%;
   height: 30%;
   max-width: 600px;
   max-height: 225px;
   min-height: 125px;
   // border: 1px solid blue;
   #main-bust {
-    max-width: 45%;
+    // border: 1px solid red;
+    max-width: 100%;
     max-height: 100%;
     width: auto;
     height: auto;
@@ -158,6 +159,7 @@
     width: 55%;
     float: right;
     padding-left: 15px;
+    // border: 1px solid green;
   }
   
 }
@@ -288,7 +290,7 @@
 }
 
 .footer-col-1 {
-  border: 1px solid green;
+  // border: 1px solid green;
   width: -webkit-calc(35% - (#{$spacing-unit} / 2));
   width:         calc(35% - (#{$spacing-unit} / 2));
 }

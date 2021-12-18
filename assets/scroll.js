@@ -10,6 +10,9 @@ $(document).ready( function () {
   document.documentElement.style.setProperty('--vh', `${vh}px`);
   // set adaptive font size for main text
   textFit(document.getElementById('main-text'), {multiLine: true, maxFontSize: 23});
+
+  document.getElementById("main-text").style.width = (document.getElementById("page-0").clientWidth - document.getElementById("main-bust").clientWidth) - 50 + "px";
+    
 });
 
 // TODO: fix resize height thing not working on non-front page cards
@@ -90,7 +93,7 @@ function recenter() {
     document.getElementById("page-0").style.left = left + "px";
 
     // set max width for main-bust
-    document.getElementById("main-bust").style.maxWidth = (document.getElementById("page-0").clientWidth * 0.45 - 35) + "px";
+    // document.getElementById("main-bust").style.maxWidth = (document.getElementById("page-0").clientWidth * 0.45 - 35) + "px";
 }
 
 $(document).keydown(function(e) {
@@ -108,6 +111,8 @@ $(document).keydown(function(e) {
 // use jQuery resize for textFit because window has bug resizing when placed in JS .onresize
 $(window).resize(function() { 
   textFit(document.getElementById('main-text'), {multiLine: true, maxFontSize: 23});
+  document.getElementById("main-text").style.width = (document.getElementById("page-0").clientWidth - document.getElementById("main-bust").clientWidth) - 50 + "px";
+    
 });
 
 window.onresize = function() {
