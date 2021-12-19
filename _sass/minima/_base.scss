@@ -127,6 +127,19 @@ a {
   }
 }
 
+a.link { // for links not in nav
+  color: $text-color;
+  text-decoration: underline;
+  text-decoration-thickness: 4px;
+  text-decoration-color: $brand-color;
+
+  &:hover {
+    color: $text-color;
+    text-decoration: underline;
+    text-decoration-thickness: 4px;
+  }
+}
+
 
 /**
  * Blockquotes

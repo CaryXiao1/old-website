@@ -247,6 +247,15 @@
   max-width: 30%;
 }
 
+.ex-title { // experience title
+  margin-bottom: 0;
+  padding-bottom:0;
+}
+.loc-time { // for subtitles in experience
+  margin-bottom: 5px;
+  color: $brand-color;
+}
+
 /**
  * Site footer
  */
