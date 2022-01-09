@@ -180,13 +180,13 @@
   display:flex;
   flex-flow:row wrap;
   justify-content:space-around;
-  // border: 1px solid black;
+  // border: 1px solid red;
 
   .card {
     font-size: $base-font-size;
     overflow: hidden;
     position: relative;
-    // border:1px solid red;
+    // border:1px solid green;
     height:100%;
     width:100%; 
 

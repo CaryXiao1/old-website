@@ -7,7 +7,6 @@
 */
 
 $(document).ready( function () {
-    resizeCardContent();
     // centers portfolio container & makes card contents visible if needed
     recenter();
 
@@ -16,8 +15,6 @@ $(document).ready( function () {
     // document.getElementById("main-text").style.width = (document.getElementById("page-0").clientWidth - document.getElementById("main-bust").clientWidth) - 50 + "px";
       
   });
-  
-  // TODO: fix resize height thing not working on non-front page cards
   
   let pageNum = 0;
   let animating = false;
@@ -46,9 +43,9 @@ $(document).ready( function () {
         }, 400, function() {
           animating = false;
         })
-      })
-    
-      if (pageNum == 1) {
+        })
+        
+        if (pageNum == 1) {
         document.getElementById("u-arr-wrap").setAttribute("hidden", true);
       }
     }
@@ -79,12 +76,7 @@ $(document).ready( function () {
     }
   }
   
-  function resizeCardContent() {
-    let cardPage = document.getElementsByClassName('card-page');
-    for (var i = 0; i < cardPage.length; i++) {
-      cardPage[i].style.maxHeight = (window.innerHeight - 180) + "px"; // 90 = spacing-unit * 3
-    }
-  }
+
   
   function recenter() {
       // centers portfolio container
@@ -118,6 +110,5 @@ $(document).ready( function () {
   });
   
   window.onresize = function() {
-    resizeCardContent();
     recenter();
   };

@@ -4,7 +4,7 @@ title: projects
 permalink: /projects/
 ---
 <div class="card">
-    <div class="card-page">
+    <div class="card-page animate">
         <h1 class="post-title">projects</h1>
         <h2><a class="link" href="https://github.com/CaryXiao1/traffic-estimate">Research Assistant</a>, <a class="link" href="https://earth.stanford.edu/equitable-transportation-decarbonization">Equitable Transportation Decarbonization</a></h2>
         <p>Currently working in The Decommissioning Internal Combustion Engine (ICE) Vehicles (DIVE) group in Stanford's School of Earth, Energy, & Environmental Sciences</p>
