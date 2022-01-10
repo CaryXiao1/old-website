@@ -69,7 +69,8 @@
     position: absolute;
     top: 9px;
     right: $spacing-unit / 2;
-    background-color: $background-color;
+    // background-color: $background-color;
+    background-color: $brand-color;
     border: 1px solid $grey-color-light;
     border-radius: 5px;
     text-align: right;
@@ -91,7 +92,6 @@
       line-height: 0;
       padding-top: 10px;
       text-align: center;
-      background-color: $background-color;
 
       > svg {
         fill: $grey-color-dark;
@@ -115,9 +115,9 @@
       color: $text-color;
       &:hover {
         text-decoration: underline;
-        text-decoration-color: $brand-color;
-        text-underline-offset: 2px;
-        text-decoration-thickness: 1px;
+        text-decoration-color: $text-color;
+        text-underline-offset: 1px;
+        text-decoration-thickness: 3px;
       }
       &:not(:last-child) {
         margin-right: 0;
