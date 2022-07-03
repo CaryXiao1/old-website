@@ -15,7 +15,7 @@ permalink: /projects/
         <p>Designed and built 3D-printed, Arduino-based, automatically realigning wireless communication system to be quickly deployed into disaster-struck regions with damaged infrastructure</p>
         <p>Trained Machine Learning algorithm to correct errors for essential messages sent through the previously created system</p>
         <p>Presented project in 2020 and 2021 Regeneron ISEF</p>
-        <p>Paper accepted into 2022 ACM Souteast Conference </p>
+        <p>Paper accepted into 2022 ACM Souteast Conference </p>    
         <p></p>
         <h2><a class="link" href="https://github.com/CaryXiao1/MADSA">MADSA: Musical Accuracy Development Using Spectral Analysis</a></h2>
         <p>Individual project; developed Java-based Music Helper Application to help lower the financial boundary to music education</p>
