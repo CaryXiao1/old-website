@@ -10,7 +10,25 @@ dl, dd, ol, ul, figure {
   overflow: hidden;
 }
 
+/* scroll bar*/
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  border: 1px solid white;
+  border-radius: 7px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #658bbf;
+  border-radius: 7px;
+}
 
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: white; 
+}
 
 /**
  * Basic styling
